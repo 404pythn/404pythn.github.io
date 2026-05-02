@@ -6,176 +6,188 @@
 <title>刘锐 — 安全工程师</title>
 <style>
   :root {
-    --text: #1a1a2e;
-    --text-2: #4a4a6a;
-    --text-3: #9898b0;
-    --bg: #f8f7f4;
-    --card: #ffffff;
-    --border: #e8e6e1;
-    --accent: #2d4b6c;
-    --accent-2: #5b7fa5;
-    --radius: 20px;
-    --radius-sm: 12px;
-    --mw: 880px;
+    --t1: #1a1a2e; --t2: #4a4a6a; --t3: #9898b0;
+    --bg: #f8f7f3; --card: #ffffff; --bdr: #e8e6e0;
+    --blue: #3b5998; --gold: #c4a265; --mint: #6b9080; --rose: #c47e7b;
+    --slate: #5b6e82; --warm: #d4b896;
+    --r: 18px; --rs: 10px; --mw: 880px;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;
-    color:var(--text);background:var(--bg);line-height:1.6;font-size:17px;
+    color:var(--t1);background:var(--bg);line-height:1.6;font-size:17px;
   }
 
-  /* = Nav = */
+  /* Nav */
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:100;height:50px;
-    background:rgba(248,247,244,.72);
+    background:rgba(248,247,243,.72);
     backdrop-filter:saturate(180%) blur(24px);
     -webkit-backdrop-filter:saturate(180%) blur(24px);
-    border-bottom:1px solid rgba(0,0,0,.06);
+    border-bottom:1px solid rgba(0,0,0,.05);
   }
   .nav-inner{
     max-width:var(--mw);margin:0 auto;display:flex;align-items:center;
     justify-content:center;gap:36px;height:100%;padding:0 24px;
   }
-  .nav a{
-    font-size:13px;font-weight:540;color:var(--text-2);
-    text-decoration:none;letter-spacing:.02em;transition:color .2s;
-  }
-  .nav a:hover{color:var(--text);}
+  .nav a{font-size:13px;font-weight:540;color:var(--t2);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+  .nav a:hover{color:var(--t1)}
 
-  /* = Sections = */
-  .sec{padding:100px 24px;position:relative;overflow:hidden;}
-  .sec-inner{max-width:var(--mw);margin:0 auto;position:relative;z-index:1;}
-  .sec-label{
-    font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--accent-2);margin-bottom:12px;
-  }
-  .sec-title{font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.16;margin-bottom:20px;}
-  .sec-desc{font-size:18px;color:var(--text-2);max-width:540px;line-height:1.75;}
+  /* Sections */
+  .sec{padding:100px 24px;position:relative;overflow:hidden}
+  .sec-inner{max-width:var(--mw);margin:0 auto;position:relative;z-index:1}
+  .sec-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+  .sec-title{font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.16;margin-bottom:20px}
+  .sec-desc{font-size:18px;color:var(--t2);max-width:540px;line-height:1.75}
 
-  /* = Hero = */
+  /* -- Geometric Decorations -- */
+  .geo{position:absolute;pointer-events:none;z-index:0}
+  .geo-line{height:1px;background:rgba(0,0,0,.06);width:100%}
+  .geo-rect{position:absolute;border-radius:3px}
+  .geo-circle{position:absolute;border-radius:50%}
+
+  /* Hero */
   .hero{
-    padding:170px 24px 120px;text-align:center;position:relative;overflow:hidden;
-    background:linear-gradient(170deg,#e8e4df 0%,#f5f2ed 30%,#eef0f4 60%,#e3e8ef 100%);
-    isolation:isolate;
-  }
-  .hero::before{
-    content:'';position:absolute;inset:0;z-index:0;
-    background:
-      radial-gradient(ellipse 80% 60% at 20% 30%,rgba(91,127,165,.12) 0%,transparent 60%),
-      radial-gradient(ellipse 60% 50% at 75% 60%,rgba(180,160,140,.10) 0%,transparent 55%),
-      radial-gradient(ellipse 50% 40% at 50% 80%,rgba(140,160,180,.08) 0%,transparent 50%);
+    padding:180px 24px 130px;text-align:center;position:relative;overflow:hidden;
+    background:linear-gradient(172deg,#eae6de 0%,#f4f2ec 35%,#eef0f4 65%,#e4e9f0 100%);
   }
   .hero::after{
-    content:'';position:absolute;inset:0;z-index:0;opacity:.03;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    content:'';position:absolute;inset:0;z-index:0;opacity:.022;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  .hero-content{position:relative;z-index:2;}
-  .hero-name{font-size:72px;font-weight:700;letter-spacing:-.04em;line-height:1.05;color:#1a1a2e;}
-  .hero-title{font-size:26px;font-weight:480;color:#5a6070;margin-top:14px;letter-spacing:.02em;}
+  .hero-content{position:relative;z-index:2}
+
+  .hero-name{font-size:72px;font-weight:700;letter-spacing:-.04em;line-height:1.05}
+  .hero-title{font-size:26px;font-weight:480;color:#5a6070;margin-top:14px;letter-spacing:.02em}
   .hero-line{
     display:inline-block;margin-top:32px;padding:10px 24px;border-radius:24px;
-    background:rgba(255,255,255,.7);backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.72);backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
-    border:1px solid rgba(0,0,0,.06);
-    font-size:16px;font-weight:540;color:#2d3a4a;letter-spacing:.01em;
+    border:1px solid rgba(0,0,0,.05);
+    font-size:16px;font-weight:540;color:#2d3a4a;
   }
-  .hero-meta{margin-top:22px;font-size:15px;color:var(--text-3);letter-spacing:.02em;}
+  .hero-meta{margin-top:22px;font-size:15px;color:var(--t3);letter-spacing:.02em}
 
-  /* = Decorative blobs = */
-  .blob{
-    position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;
-  }
-  .blob-1{width:420px;height:420px;background:rgba(180,195,215,.18);top:-120px;right:-80px;}
-  .blob-2{width:340px;height:340px;background:rgba(200,180,160,.12);bottom:-80px;left:-60px;}
-  .blob-3{width:300px;height:300px;background:rgba(160,190,210,.10);top:20%;left:50%;transform:translateX(-50%);}
+  /* Hero geo blocks */
+  .h-g1{width:280px;height:120px;background:rgba(107,144,128,.08);border-radius:4px;top:60px;left:-80px;transform:rotate(-12deg)}
+  .h-g2{width:160px;height:160px;background:rgba(196,162,101,.09);border-radius:50%;top:40px;right:10%}
+  .h-g3{width:100px;height:100px;background:rgba(196,126,123,.07);border-radius:8px;bottom:60px;right:-30px;transform:rotate(20deg)}
+  .h-g4{width:200px;height:80px;background:rgba(91,110,130,.06);border-radius:4px;bottom:40px;left:5%;transform:rotate(-6deg)}
+  .h-g5{width:60px;height:60px;background:rgba(212,184,150,.10);border-radius:50%;top:30%;right:25%}
+  .h-g6{width:40px;height:40px;background:rgba(59,89,152,.06);border-radius:3px;top:25%;left:15%;transform:rotate(25deg)}
 
-  /* = About = */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-  .about-text p{margin-bottom:14px;color:var(--text-2);font-size:16px;line-height:1.85;}
-  .info-list{list-style:none;}
-  .info-list li{
-    display:flex;align-items:center;gap:14px;padding:13px 0;
-    border-bottom:1px solid var(--border);font-size:15px;
-  }
-  .info-list li:last-child{border-bottom:none;}
-  .info-icon{
-    width:34px;height:34px;border-radius:10px;background:#f0efe9;
-    display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;
-  }
-  .info-label{color:var(--text-3);font-size:12px;margin-bottom:2px;}
-  .info-value{font-weight:540;}
+  /* About geo */
+  .a-g1{width:180px;height:180px;background:rgba(107,144,128,.06);border-radius:50%;top:-40px;right:-60px}
+  .a-g2{width:80px;height:80px;background:rgba(196,162,101,.07);border-radius:3px;bottom:20px;left:-40px;transform:rotate(15deg)}
+  .a-g3{width:120px;height:8px;background:rgba(196,126,123,.10);border-radius:4px;top:50%;left:-50px;transform:rotate(-8deg)}
 
-  /* = Cards = */
-  .card-grid{display:grid;gap:14px;}
+  /* About grid */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .about-text p{margin-bottom:14px;color:var(--t2);font-size:16px;line-height:1.85}
+  .info-list{list-style:none}
+  .info-list li{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--bdr);font-size:15px}
+  .info-list li:last-child{border-bottom:none}
+  .info-icon{width:34px;height:34px;border-radius:10px;background:#f0efe9;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+  .info-label{color:var(--t3);font-size:12px;margin-bottom:2px}
+  .info-value{font-weight:540}
+
+  /* Cards */
+  .card-grid{display:grid;gap:14px}
   .card{
-    background:var(--card);border-radius:var(--radius);padding:34px;
+    background:var(--card);border-radius:var(--r);padding:34px;
     box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.03);
     border:1px solid rgba(0,0,0,.04);
+    position:relative;overflow:hidden;
     transition:box-shadow .35s,transform .35s;
   }
-  .card:hover{box-shadow:0 2px 8px rgba(0,0,0,.06),0 8px 32px rgba(0,0,0,.05);transform:translateY(-2px);}
-  .card-kicker{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-2);margin-bottom:8px;}
-  .card-title{font-size:20px;font-weight:650;margin-bottom:4px;}
-  .card-sub{font-size:14px;color:var(--text-3);margin-bottom:12px;}
-  .card-body{font-size:15px;color:var(--text-2);line-height:1.75;}
-  .card-body li{margin-bottom:5px;}
-  .card-body ul{padding-left:18px;}
+  .card:hover{box-shadow:0 2px 8px rgba(0,0,0,.06),0 8px 32px rgba(0,0,0,.05);transform:translateY(-2px)}
+  .card-kicker{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+  .card-title{font-size:20px;font-weight:650;margin-bottom:4px}
+  .card-sub{font-size:14px;color:var(--t3);margin-bottom:12px}
+  .card-body{font-size:15px;color:var(--t2);line-height:1.75}
+  .card-body li{margin-bottom:5px}
+  .card-body ul{padding-left:18px}
 
-  /* = Timeline = */
-  .tl{position:relative;}
-  .tl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--border);}
-  .tl-item{position:relative;padding-left:46px;margin-bottom:44px;}
-  .tl-item:last-child{margin-bottom:0;}
-  .tl-dot{position:absolute;left:7px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
-  .tl-org{font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--accent-2);}
-  .tl-role{font-size:20px;font-weight:650;margin:4px 0 2px;}
-  .tl-body{font-size:15px;color:var(--text-2);line-height:1.75;margin-top:8px;}
-  .tl-body li{margin-bottom:4px;}
-  .tl-body ul{padding-left:18px;}
+  /* Card accent strips */
+  .card::before{content:'';position:absolute;top:0;left:0;width:4px;height:40px;border-radius:0 0 4px 0}
+  .card:nth-child(1)::before{background:var(--mint)}
+  .card:nth-child(2)::before{background:var(--gold)}
+  .card:nth-child(3)::before{background:var(--rose)}
 
-  /* = Skills = */
-  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  /* Exp geo */
+  .e-g1{width:240px;height:240px;background:rgba(212,184,150,.07);border-radius:50%;top:-80px;left:-100px}
+  .e-g2{width:100px;height:140px;background:rgba(91,110,130,.05);border-radius:4px;bottom:-40px;right:10%;transform:rotate(18deg)}
+
+  /* Timeline */
+  .tl{position:relative}
+  .tl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--bdr)}
+  .tl-item{position:relative;padding-left:46px;margin-bottom:44px}
+  .tl-item:last-child{margin-bottom:0}
+  .tl-dot{position:absolute;left:7px;top:5px;width:15px;height:15px;border-radius:50%;border:3px solid var(--bg)}
+  .tl-item:nth-child(1) .tl-dot{background:var(--mint)}
+  .tl-item:nth-child(2) .tl-dot{background:var(--gold)}
+  .tl-org{font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--slate)}
+  .tl-role{font-size:20px;font-weight:650;margin:4px 0 2px}
+  .tl-body{font-size:15px;color:var(--t2);line-height:1.75;margin-top:8px}
+  .tl-body li{margin-bottom:4px}
+  .tl-body ul{padding-left:18px}
+
+  /* Skills */
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .skill-card{
-    background:var(--card);border-radius:var(--radius-sm);padding:28px;
+    background:var(--card);border-radius:var(--rs);padding:28px;
     box-shadow:0 1px 2px rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.03);
+    position:relative;overflow:hidden;
   }
-  .skill-card h3{font-size:18px;font-weight:650;margin-bottom:10px;}
-  .skill-card p{font-size:15px;color:var(--text-2);line-height:1.75;}
+  .skill-card::after{content:'';position:absolute;top:0;right:0;width:60px;height:60px;border-radius:0 0 0 60px;opacity:.06}
+  .skill-card:nth-child(1)::after{background:var(--blue)}
+  .skill-card:nth-child(2)::after{background:var(--mint)}
+  .skill-card:nth-child(3)::after{background:var(--gold)}
+  .skill-card:nth-child(4)::after{background:var(--rose)}
+  .skill-card h3{font-size:18px;font-weight:650;margin-bottom:10px}
+  .skill-card p{font-size:15px;color:var(--t2);line-height:1.75}
 
-  /* = Section alt bg = */
-  .sec-alt{background:#fff;}
+  /* Skill geo */
+  .s-g1{width:160px;height:160px;background:rgba(107,144,128,.05);border-radius:50%;top:-60px;right:-60px}
+  .s-g2{width:70px;height:70px;background:rgba(196,126,123,.06);border-radius:4px;bottom:10px;left:-30px;transform:rotate(25deg)}
 
-  /* = Footer = */
+  /* Education geo */
+  .ed-g1{width:200px;height:200px;background:rgba(59,89,152,.04);border-radius:50%;top:-80px;left:-80px}
+  .ed-g2{width:90px;height:90px;background:rgba(196,162,101,.06);border-radius:6px;bottom:-30px;right:5%;transform:rotate(-14deg)}
+  .ed-g3{width:140px;height:6px;background:rgba(107,144,128,.10);border-radius:3px;top:40px;right:10%;transform:rotate(-5deg)}
+
+  /* Sec alt bg */
+  .sec-alt{background:#fff}
+
+  /* Footer */
   .footer{
-    padding:36px 24px;text-align:center;
-    border-top:1px solid var(--border);color:var(--text-3);font-size:13px;
+    padding:36px 24px;text-align:center;border-top:1px solid var(--bdr);color:var(--t3);font-size:13px;
+    position:relative;overflow:hidden;
   }
-  .footer a{color:var(--accent-2);text-decoration:none;}
+  .f-g1{width:120px;height:120px;background:rgba(212,184,150,.05);border-radius:50%;top:-40px;right:15%}
+  .f-g2{width:60px;height:60px;background:rgba(107,144,128,.05);border-radius:3px;bottom:10px;left:10%;transform:rotate(20deg)}
 
-  /* = Noise overlay (global) = */
   .noise{
-    position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
+    position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.02;
     background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   @media(max-width:680px){
-    .nav-inner{gap:20px;}
-    .hero{padding:120px 20px 80px;}
-    .hero-name{font-size:44px;}
-    .hero-title{font-size:20px;}
-    .sec{padding:60px 20px;}
-    .sec-title{font-size:28px;}
-    .about-grid{grid-template-columns:1fr;gap:32px;}
-    .skill-grid{grid-template-columns:1fr;}
+    .nav-inner{gap:20px}
+    .hero{padding:120px 20px 80px}
+    .hero-name{font-size:44px}
+    .hero-title{font-size:20px}
+    .sec{padding:60px 20px}
+    .sec-title{font-size:28px}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .skill-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
-
 <div class="noise" aria-hidden="true"></div>
 
-<!-- Nav -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#about">关于</a>
@@ -188,8 +200,12 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="blob blob-1" aria-hidden="true"></div>
-  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="geo geo-rect h-g1" aria-hidden="true"></div>
+  <div class="geo geo-circle h-g2" aria-hidden="true"></div>
+  <div class="geo geo-rect h-g3" aria-hidden="true"></div>
+  <div class="geo geo-rect h-g4" aria-hidden="true"></div>
+  <div class="geo geo-circle h-g5" aria-hidden="true"></div>
+  <div class="geo geo-rect h-g6" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 class="hero-name">刘锐</h1>
     <p class="hero-title">安全工程师</p>
@@ -200,35 +216,22 @@
 
 <!-- About -->
 <section class="sec" id="about">
-  <div class="blob blob-3" aria-hidden="true"></div>
+  <div class="geo geo-circle a-g1" aria-hidden="true"></div>
+  <div class="geo geo-rect a-g2" aria-hidden="true"></div>
+  <div class="geo geo-rect a-g3" aria-hidden="true"></div>
   <div class="sec-inner">
     <div class="sec-label">关于我</div>
     <div class="about-grid">
       <div class="about-text">
-        <p>安全工程专业本科在读，2026 年应届毕业。已签约南京南化建设，从事安全工程师岗位。具备扎实的安全管理体系知识，注重从本质出发分析问题，而非教条式照搬。</p>
+        <p>安全工程专业本科在读，2026 年应届毕业，即将入职南京南化建设担任安全工程师。具备扎实的安全管理体系知识，注重从本质出发分析问题，而非教条式照搬。</p>
         <p>有消防巡查、应急演练、安全文档编制等实操经验。善于组织协调，多次承担团队领队角色。业余热爱摄影，注重细节观察。</p>
       </div>
       <ul class="info-list">
-        <li>
-          <div class="info-icon">&#127891;</div>
-          <div><div class="info-label">学校</div><div class="info-value">南京工业大学</div></div>
-        </li>
-        <li>
-          <div class="info-icon">&#128300;</div>
-          <div><div class="info-label">专业</div><div class="info-value">安全工程</div></div>
-        </li>
-        <li>
-          <div class="info-icon">&#9993;</div>
-          <div><div class="info-label">邮箱</div><div class="info-value">2723395548@qq.com</div></div>
-        </li>
-        <li>
-          <div class="info-icon">&#128205;</div>
-          <div><div class="info-label">所在地</div><div class="info-value">南京 / 嘉兴</div></div>
-        </li>
-        <li>
-          <div class="info-icon">&#127381;</div>
-          <div><div class="info-label">工作</div><div class="info-value">南京南化建设</div></div>
-        </li>
+        <li><div class="info-icon">&#127891;</div><div><div class="info-label">学校</div><div class="info-value">南京工业大学</div></div></li>
+        <li><div class="info-icon">&#128300;</div><div><div class="info-label">专业</div><div class="info-value">安全工程</div></div></li>
+        <li><div class="info-icon">&#9993;</div><div><div class="info-label">邮箱</div><div class="info-value">2723395548@qq.com</div></div></li>
+        <li><div class="info-icon">&#128205;</div><div><div class="info-label">所在地</div><div class="info-value">南京 / 嘉兴</div></div></li>
+        <li><div class="info-icon">&#127381;</div><div><div class="info-label">工作</div><div class="info-value">南京南化建设</div></div></li>
       </ul>
     </div>
   </div>
@@ -236,6 +239,9 @@
 
 <!-- Education -->
 <section class="sec sec-alt" id="education">
+  <div class="geo geo-circle ed-g1" aria-hidden="true"></div>
+  <div class="geo geo-rect ed-g2" aria-hidden="true"></div>
+  <div class="geo geo-rect ed-g3" aria-hidden="true"></div>
   <div class="sec-inner">
     <div class="sec-label">教育背景</div>
     <div class="sec-title">南京工业大学</div>
@@ -248,6 +254,8 @@
 
 <!-- Experience -->
 <section class="sec" id="experience">
+  <div class="geo geo-circle e-g1" aria-hidden="true"></div>
+  <div class="geo geo-rect e-g2" aria-hidden="true"></div>
   <div class="sec-inner">
     <div class="sec-label">实习经历</div>
     <div class="tl">
@@ -288,16 +296,12 @@
         <div class="card-kicker">校级立项</div>
         <div class="card-title">大学生创新创业训练项目</div>
         <div class="card-sub">校园网络密码安全意识调查</div>
-        <div class="card-body">
-          <ul><li>调研校园密码安全意识，发放400份问卷，提出5项改进建议，项目获校级立项并结题</li></ul>
-        </div>
+        <div class="card-body"><ul><li>调研校园密码安全意识，发放400份问卷，提出5项改进建议，项目获校级立项并结题</li></ul></div>
       </div>
       <div class="card">
         <div class="card-kicker">团队管理</div>
         <div class="card-title">校园龙舟队</div>
-        <div class="card-body">
-          <ul><li>组织训练与财务协调，带领团队多次获奖，积累人员协调与现场安全管理经验</li></ul>
-        </div>
+        <div class="card-body"><ul><li>组织训练与财务协调，带领团队多次获奖，积累人员协调与现场安全管理经验</li></ul></div>
       </div>
       <div class="card">
         <div class="card-kicker">赛事组织</div>
@@ -315,31 +319,22 @@
 
 <!-- Skills -->
 <section class="sec" id="skills">
+  <div class="geo geo-circle s-g1" aria-hidden="true"></div>
+  <div class="geo geo-rect s-g2" aria-hidden="true"></div>
   <div class="sec-inner">
     <div class="sec-label">技能与证书</div>
     <div class="skill-grid">
-      <div class="skill-card">
-        <h3>专业能力</h3>
-        <p>熟悉安全管理体系、消防巡查、应急演练及安全文档编制</p>
-      </div>
-      <div class="skill-card">
-        <h3>软件工具</h3>
-        <p>熟练使用 Office 办公软件，具备基础数据分析能力</p>
-      </div>
-      <div class="skill-card">
-        <h3>语言能力</h3>
-        <p>英语四级（CET-4），能阅读安全类英文文档</p>
-      </div>
-      <div class="skill-card">
-        <h3>其他特长</h3>
-        <p>摄影，注重细节观察与视觉表达</p>
-      </div>
+      <div class="skill-card"><h3>专业能力</h3><p>熟悉安全管理体系、消防巡查、应急演练及安全文档编制</p></div>
+      <div class="skill-card"><h3>软件工具</h3><p>熟练使用 Office 办公软件，具备基础数据分析能力</p></div>
+      <div class="skill-card"><h3>语言能力</h3><p>英语四级（CET-4），能阅读安全类英文文档</p></div>
+      <div class="skill-card"><h3>其他特长</h3><p>摄影，注重细节观察与视觉表达</p></div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
+  <div class="geo geo-circle f-g1" aria-hidden="true"></div>
+  <div class="geo geo-rect f-g2" aria-hidden="true"></div>
   <p>刘锐 &nbsp;·&nbsp; 南京工业大学安全工程 &nbsp;·&nbsp; 南京南化建设安全工程师</p>
 </footer>
 
